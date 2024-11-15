@@ -104,8 +104,7 @@ namespace LilLycanLord_Official
                 else if (updatedImage.transform.Find(attachedPrefab.name) == null)
                     AttachPrefab(updatedImage.transform);
             }
-            foreach (KeyValuePair<TrackableId, ARTrackedImage> removedImage in eventArgs.removed)
-            { }
+            foreach (ARTrackedImage removedImage in eventArgs.removed) { }
         }
 
         void AttachPrefab(Transform parent)

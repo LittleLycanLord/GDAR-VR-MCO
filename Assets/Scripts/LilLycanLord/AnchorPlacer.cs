@@ -57,9 +57,6 @@ namespace LilLycanLord_Official
         [Range(0.1f, 5.0f)]
         float scaleMultiplier = 1.0f;
 
-        [SerializeField]
-        float deletionRange = 0.1f;
-
         //* ╔════════════╗
         //* ║ Attributes ║
         //* ╚════════════╝

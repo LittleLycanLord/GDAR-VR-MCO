@@ -59,9 +59,6 @@ namespace LilLycanLord_Official
         [SerializeField]
         TMP_Text heightLabel;
 
-        [SerializeField]
-        float deletionRange = 1.0f;
-
         //* ╔════════════╗
         //* ║ Attributes ║
         //* ╚════════════╝
