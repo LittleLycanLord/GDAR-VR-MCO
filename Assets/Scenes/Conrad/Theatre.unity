@@ -272,7 +272,7 @@ PrefabInstance:
     - target: {fileID: 6049981524072644016, guid: 62009038b4acf004ead3456bf1fbcdd8,
         type: 3}
       propertyPath: m_Name
-      value: Kitchen
+      value: Theatre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
