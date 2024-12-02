@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: af0781d40ee42ae418cdccb949c132d7, type: 3}
       propertyPath: m_Name
-      value: baby-oil_open
+      value: item oil
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: af0781d40ee42ae418cdccb949c132d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: af0781d40ee42ae418cdccb949c132d7, type: 3}
       propertyPath: m_LocalPosition.x

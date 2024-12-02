@@ -81,7 +81,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7dd451d9bc7dd29478530805aaf58b68,
         type: 3}
       propertyPath: m_Name
-      value: 06-12-19_tennis_racket_export_v1
+      value: item tennis racket
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7dd451d9bc7dd29478530805aaf58b68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

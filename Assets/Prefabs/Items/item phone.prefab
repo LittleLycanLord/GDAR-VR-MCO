@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: item phone
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 317347d94619724438d727571af3ad4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

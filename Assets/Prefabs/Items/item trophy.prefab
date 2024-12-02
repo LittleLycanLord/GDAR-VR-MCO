@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: item trophy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae0d79b6791ff774297c46dc0ab97f6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1782016278679075742, guid: ae0d79b6791ff774297c46dc0ab97f6b,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
