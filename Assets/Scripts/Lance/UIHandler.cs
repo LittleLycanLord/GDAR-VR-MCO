@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -76,5 +78,10 @@ public class UIHandler : MonoBehaviour
         this.GameProfile.SetActive(true);
     }
 
-   
+    public void openARScene()
+    {
+        // load ar cam scene here //
+        Debug.Log("Opened AR Camera Scene");
+        SceneManager.LoadScene("TrackTest");
+    }
 }
