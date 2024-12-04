@@ -63,7 +63,7 @@ namespace LilLycanLord_Official
         //* ║ Non - Monobehaviour ║
         //* ╚═════════════════════╝
         [ContextMenu("Grow")]
-        void Grow()
+        public void Grow()
         {
             rectTransform.LeanScale(Vector3.one, growDuration).setEase(LeanTweenType.easeOutBounce);
         }
