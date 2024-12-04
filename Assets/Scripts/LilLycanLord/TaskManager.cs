@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AYellowpaper;
+using AYellowpaper.SerializedCollections;
 using LilLycanLord_Official;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -100,7 +101,10 @@ namespace LilLycanLord_Official
         //* ╔══════════╗
         //* ║ Displays ║
         //* ╚══════════╝
-        // [Header("Displays")]
+        [Header("Displays")]
+        [SerializedDictionary("Task", "Countdown")]
+        public SerializedDictionary<GameObject, int> tasks =
+            new SerializedDictionary<GameObject, int>();
 
         //* ╔════════╗
         //* ║ Fields ║
@@ -117,22 +121,31 @@ namespace LilLycanLord_Official
         GameObject taskPrefab;
 
         [SerializeField]
-        List<GameObject> tasks;
+        Canvas generalCanvas;
 
         [SerializeField]
-        Canvas taskList;
+        Canvas activeTaskList;
+
+        [SerializeField]
+        Canvas expiredTaskList;
 
         //* ╔════════════╗
         //* ║ Attributes ║
         //* ╚════════════╝
-        GameObject listContent;
+        GameObject activeListContent;
+        GameObject expiredListContent;
 
         //* ╔═══════════════╗
         //* ║ Monobehaviour ║
         //* ╚═══════════════╝
         void Start()
         {
-            listContent = taskList
+            activeListContent = activeTaskList
+                .transform.Find("Scroll View")
+                .Find("Viewport")
+                .Find("Content")
+                .gameObject;
+            expiredListContent = expiredTaskList
                 .transform.Find("Scroll View")
                 .Find("Viewport")
                 .Find("Content")
@@ -141,8 +154,20 @@ namespace LilLycanLord_Official
 
         void Update()
         {
-            if (listContent != null)
-                listContent.SetActive(SceneManager.GetActiveScene().name == "Tasks");
+            // Debug.Log(SceneManager.GetActiveScene().name);
+            if (activeListContent != null)
+            {
+                activeListContent.SetActive(SceneManager.GetActiveScene().name == "Tasks");
+                //: NOTE: Enable this if-block on build/implementation.
+                // if (SceneManager.GetActiveScene().name == "Tasks")
+                // {
+                //     generalCanvas.enabled = false;
+                //     expiredTaskList.enabled = false;
+                // }
+            }
+
+            activeTaskList.enabled = expiredListContent.transform.childCount == 0;
+            expiredTaskList.enabled = expiredListContent.transform.childCount > 0;
         }
 
         //* ╔═════════════════════╗
@@ -154,7 +179,7 @@ namespace LilLycanLord_Official
             if (Random.Range(1, taskChance) == 1)
             {
                 Debug.Log("Task Get!");
-                GameObject.Instantiate(taskPopUpPrefab, taskList.transform);
+                GameObject.Instantiate(taskPopUpPrefab, generalCanvas.transform);
             }
             else
                 Debug.Log("Failed to get task");
@@ -162,15 +187,33 @@ namespace LilLycanLord_Official
 
         public void AddTask(int taskID)
         {
-            GameObject
-                .Instantiate(taskPrefab, listContent.transform)
-                .GetComponent<TaskBehaviour>()
-                .SetTask(taskID);
+            GameObject newTask = GameObject.Instantiate(taskPrefab, activeListContent.transform);
+            newTask.GetComponent<TaskBehaviour>().SetTask(taskID);
+            tasks.Add(newTask, 3);
         }
 
         public void ResolveTask(TaskBehaviour task)
         {
             tasks.Remove(task.gameObject);
+        }
+
+        public void CheckTasks()
+        {
+            List<GameObject> keys = new List<GameObject>(tasks.Keys);
+            foreach (GameObject task in keys)
+            {
+                tasks[task]--;
+                if (tasks[task] == 0)
+                    OnTaskExpired(task);
+            }
+        }
+
+        void OnTaskExpired(GameObject task)
+        {
+            SimpleAudioManager.Instance.Play("Expired Task", gameObject);
+            task.GetComponent<RectTransform>().localScale = Vector3.zero;
+            task.GetComponent<RectTransform>().SetParent(expiredListContent.transform);
+            task.GetComponent<TaskBehaviour>().Grow();
         }
     }
 }
