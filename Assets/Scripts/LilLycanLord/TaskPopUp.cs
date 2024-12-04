@@ -51,8 +51,8 @@ namespace LilLycanLord_Official
             rectTransform.localScale = Vector3.zero;
 
             rawImage = GetComponent<RawImage>();
-            taskID = Random.Range(0, taskTextures.Count);
-            rawImage.texture = taskTextures[taskID];
+            taskID = Random.Range(1, taskTextures.Count);
+            rawImage.texture = taskTextures[taskID - 1];
 
             Grow();
         }

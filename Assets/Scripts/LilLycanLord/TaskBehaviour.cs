@@ -35,9 +35,8 @@ namespace LilLycanLord_Official
             rectTransform = GetComponent<RectTransform>();
 
             rawImage = GetComponent<RawImage>();
-            taskID = Random.Range(0, taskTextures.Count);
-            rawImage.texture = taskTextures[taskID];
-            rawImage.texture = taskTextures[taskID];
+            taskID = Random.Range(1, taskTextures.Count);
+            rawImage.texture = taskTextures[taskID - 1];
         }
 
         void Start() { }
