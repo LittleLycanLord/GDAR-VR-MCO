@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
   m_Name: ReferenceImageLibrary
   m_EditorClassIdentifier: 
-  m_GuidLow: 0
-  m_GuidHigh: 0
+  m_GuidLow: 5156779507620945398
+  m_GuidHigh: 17957850747694501014
   m_DataStore:
     m_Storage: []
   m_Images:
@@ -25,5 +25,85 @@ MonoBehaviour:
       m_GuidHigh: 5394385689347290041
     m_Size: {x: 0.01, y: 0.0106809335}
     m_SpecifySize: 1
-    m_Name: cluedo board image_1 1
+    m_Name: kitchen_img
     m_Texture: {fileID: 2800000, guid: 10d08f1886d83b24b9f3fe2a34b5dc4a, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5277316927721530719
+      m_GuidHigh: 228301613734514604
+    m_SerializedTextureGuid:
+      m_GuidLow: 15119809753989127492
+      m_GuidHigh: 14842969647340900120
+    m_Size: {x: 0.01, y: 0.011403225}
+    m_SpecifySize: 1
+    m_Name: dining_img
+    m_Texture: {fileID: 2800000, guid: f2021d445adcd1d418cfa8b940d2fccd, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4911705319905044362
+      m_GuidHigh: 7472140218402515617
+    m_SerializedTextureGuid:
+      m_GuidLow: 16218775769015644565
+      m_GuidHigh: 17897282588651915066
+    m_Size: {x: 0.01, y: 0.00960961}
+    m_SpecifySize: 1
+    m_Name: guesthouse_img
+    m_Texture: {fileID: 2800000, guid: 93e3f195aaa1e1143a8761c5b0eb5ff8, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5378887982023112807
+      m_GuidHigh: 17020883166459929250
+    m_SerializedTextureGuid:
+      m_GuidLow: 6454857587138953410
+      m_GuidHigh: 15124090166065723000
+    m_Size: {x: 0.01, y: 0.011564059}
+    m_SpecifySize: 1
+    m_Name: patio_img
+    m_Texture: {fileID: 2800000, guid: b52700c242c659947876530be08fe3d1, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5548587593108083576
+      m_GuidHigh: 3345806372132362140
+    m_SerializedTextureGuid:
+      m_GuidLow: 17727427028113499763
+      m_GuidHigh: 3104771361050252058
+    m_Size: {x: 0.01, y: 0.008843648}
+    m_SpecifySize: 1
+    m_Name: hall_img
+    m_Texture: {fileID: 2800000, guid: 485d267378f5f6041ad334641a5d162b, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4678057240083908994
+      m_GuidHigh: 6748718900221063296
+    m_SerializedTextureGuid:
+      m_GuidLow: 17632829891833926302
+      m_GuidHigh: 13744716234446866793
+    m_Size: {x: 0.01, y: 0.014444444}
+    m_SpecifySize: 1
+    m_Name: spa_img
+    m_Texture: {fileID: 2800000, guid: 27a6929e655df4b46909c0b4970abfbe, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5290513928364994680
+      m_GuidHigh: 1546154095826424741
+    m_SerializedTextureGuid:
+      m_GuidLow: 5072272029457243914
+      m_GuidHigh: 18312275086962550505
+    m_Size: {x: 0.01, y: 0.01534005}
+    m_SpecifySize: 1
+    m_Name: theatre_img
+    m_Texture: {fileID: 2800000, guid: 67f2df0a54894664e966a3432b4522fe, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4615470061995773913
+      m_GuidHigh: 13423108318089926320
+    m_SerializedTextureGuid:
+      m_GuidLow: 10355084126296960515
+      m_GuidHigh: 17796089635775505962
+    m_Size: {x: 0.01, y: 0.01440678}
+    m_SpecifySize: 1
+    m_Name: living_img
+    m_Texture: {fileID: 2800000, guid: 37376e03a6268fb42ae6686b3c69f8f6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4884386517948257540
+      m_GuidHigh: 5436882176577903250
+    m_SerializedTextureGuid:
+      m_GuidLow: 9805739405047868269
+      m_GuidHigh: 12259917265501565323
+    m_Size: {x: 0.01, y: 0.019419525}
+    m_SpecifySize: 1
+    m_Name: observatory_img
+    m_Texture: {fileID: 2800000, guid: 2dedab6dfc0988148b31e611ccf923aa, type: 3}
