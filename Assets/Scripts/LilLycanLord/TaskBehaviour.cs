@@ -6,35 +6,22 @@ using UnityEngine.UI;
 
 namespace LilLycanLord_Official
 {
-    [RequireComponent(typeof(RectTransform))]
     [RequireComponent(typeof(RawImage))]
-    public class TaskPopUp : MonoBehaviour
+    public class TaskBehaviour : TaskPopUp
     {
         //* ╔════════════╗
         //* ║ Components ║
         //* ╚════════════╝
-        protected RectTransform rectTransform;
-        protected RawImage rawImage;
 
         //* ╔══════════╗
         //* ║ Displays ║
         //* ╚══════════╝
-        [Header("Displays")]
-        public int taskID = -1;
-
+        // [Header("Displays")]
         //* ╔════════╗
         //* ║ Fields ║
         //* ╚════════╝
-        [Space(10)]
-        [Header("Fields")]
-        [SerializeField]
-        protected float growDuration = 1.0f;
-
-        [SerializeField]
-        protected float shrinkDuration = 1.0f;
-
-        [SerializeField]
-        protected List<Texture> taskTextures = new List<Texture>();
+        // [Space(10)]
+        // [Header("Fields")]
 
         //* ╔════════════╗
         //* ║ Attributes ║
@@ -43,49 +30,26 @@ namespace LilLycanLord_Official
         //* ╔═══════════════╗
         //* ║ Monobehaviour ║
         //* ╚═══════════════╝
-        void Awake() { }
-
-        void Start()
+        void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
-            rectTransform.localScale = Vector3.zero;
 
             rawImage = GetComponent<RawImage>();
             taskID = Random.Range(0, taskTextures.Count);
             rawImage.texture = taskTextures[taskID];
-
-            Grow();
+            rawImage.texture = taskTextures[taskID];
         }
+
+        void Start() { }
 
         void Update() { }
 
         //* ╔═════════════════════╗
         //* ║ Non - Monobehaviour ║
         //* ╚═════════════════════╝
-        [ContextMenu("Grow")]
-        void Grow()
+        public void Resolve()
         {
-            rectTransform.LeanScale(Vector3.one, growDuration).setEase(LeanTweenType.easeOutBounce);
-        }
-
-        [ContextMenu("Shrink")]
-        protected void Shrink()
-        {
-            rectTransform
-                .LeanScale(Vector3.zero, shrinkDuration)
-                .setEase(LeanTweenType.easeInBounce);
-
-            Destroy(gameObject, shrinkDuration);
-        }
-
-        public void Accept()
-        {
-            TaskManager.Instance.AddTask(taskID);
-            Shrink();
-        }
-
-        public void Discard()
-        {
+            TaskManager.Instance.ResolveTask(this);
             Shrink();
         }
     }
