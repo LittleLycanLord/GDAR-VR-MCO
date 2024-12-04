@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AYellowpaper;
 using LilLycanLord_Official;
 using Unity.VisualScripting;
@@ -138,7 +139,8 @@ namespace LilLycanLord_Official
                 .gameObject;
         }
 
-        void Update() {
+        void Update()
+        {
             if (listContent != null)
                 listContent.SetActive(SceneManager.GetActiveScene().name == "Tasks");
         }
@@ -160,13 +162,15 @@ namespace LilLycanLord_Official
 
         public void AddTask(int taskID)
         {
-            GameObject.Instantiate(taskPrefab, listContent.transform);
+            GameObject
+                .Instantiate(taskPrefab, listContent.transform)
+                .GetComponent<TaskBehaviour>()
+                .SetTask(taskID);
         }
 
         public void ResolveTask(TaskBehaviour task)
         {
             tasks.Remove(task.gameObject);
-            Destroy(task.gameObject);
         }
     }
 }

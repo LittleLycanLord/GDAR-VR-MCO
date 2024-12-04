@@ -33,10 +33,6 @@ namespace LilLycanLord_Official
         void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
-
-            rawImage = GetComponent<RawImage>();
-            taskID = Random.Range(1, taskTextures.Count);
-            rawImage.texture = taskTextures[taskID - 1];
         }
 
         void Start() { }
@@ -46,6 +42,12 @@ namespace LilLycanLord_Official
         //* ╔═════════════════════╗
         //* ║ Non - Monobehaviour ║
         //* ╚═════════════════════╝
+        public void SetTask(int taskID)
+        {
+            rawImage = GetComponent<RawImage>();
+            rawImage.texture = taskTextures[taskID - 1];
+        }
+
         public void Resolve()
         {
             TaskManager.Instance.ResolveTask(this);

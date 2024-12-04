@@ -51,7 +51,7 @@ namespace LilLycanLord_Official
             rectTransform.localScale = Vector3.zero;
 
             rawImage = GetComponent<RawImage>();
-            taskID = Random.Range(1, taskTextures.Count);
+            taskID = Random.Range(1, taskTextures.Count + 1);
             rawImage.texture = taskTextures[taskID - 1];
 
             Grow();
@@ -69,7 +69,7 @@ namespace LilLycanLord_Official
         }
 
         [ContextMenu("Shrink")]
-        protected void Shrink()
+        public void Shrink()
         {
             rectTransform
                 .LeanScale(Vector3.zero, shrinkDuration)
