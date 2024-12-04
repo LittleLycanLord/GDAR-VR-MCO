@@ -852,6 +852,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4124804384460520034, guid: ec57a49b7b3c1024081198ca4e7d72e0,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4576322061196428505, guid: ec57a49b7b3c1024081198ca4e7d72e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -905,6 +910,11 @@ PrefabInstance:
     - target: {fileID: 7547896588212575118, guid: ec57a49b7b3c1024081198ca4e7d72e0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521255937137165371, guid: ec57a49b7b3c1024081198ca4e7d72e0,
+        type: 3}
+      propertyPath: tasks.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8832660885568313985, guid: ec57a49b7b3c1024081198ca4e7d72e0,
