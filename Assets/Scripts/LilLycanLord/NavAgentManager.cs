@@ -92,22 +92,22 @@ namespace LilLycanLord_Official
                 default:
                     break;
             }
-            if (inputRay.origin != Vector3.zero)
-                if (destinationLayer == 0)
-                    MoveAllAgents(
-                        trackablePoolManager
-                            .RaycastTillTrackable(
-                                inputRay,
-                                UnityEngine.XR.ARSubsystems.TrackableType.Planes
-                            )
-                            .pose.position,
-                        agentSpeed
-                    );
-                else if (Physics.Raycast(inputRay, out RaycastHit hit))
-                {
-                    Debug.Log("Agents moving to" + hit.point);
-                    MoveAllAgents(hit.point, agentSpeed);
-                }
+            // if (inputRay.origin != Vector3.zero)
+            //     if (destinationLayer == 0)
+            //         MoveAllAgents(
+            //             trackablePoolManager
+            //                 .RaycastTillTrackable(
+            //                     inputRay,
+            //                     UnityEngine.XR.ARSubsystems.TrackableType.Planes
+            //                 )
+            //                 .pose.position,
+            //             agentSpeed
+            //         );
+            //     else if (Physics.Raycast(inputRay, out RaycastHit hit))
+            //     {
+            //         Debug.Log("Agents moving to" + hit.point);
+            //         MoveAllAgents(hit.point, agentSpeed);
+            //     }
         }
 
         //* ╔═════════════════════╗

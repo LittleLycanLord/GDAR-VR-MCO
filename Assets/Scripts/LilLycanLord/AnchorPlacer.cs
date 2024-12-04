@@ -103,21 +103,21 @@ namespace LilLycanLord_Official
                     break;
             }
 
-            if (inputRay.origin != Vector3.zero)
-                if (!DeleteAnchor(inputRay))
-                    if (
-                        validTrackableToPlaceAnchor
-                        == UnityEngine.XR.ARSubsystems.TrackableType.None
-                    )
-                        PlaceAnchor(
-                            inputRay.GetPoint(maximumForwardOffset * forwardOffsetPercentage)
-                        );
-                    else
-                        PlaceAnchor(
-                            trackablePoolManager
-                                .RaycastTillTrackable(inputRay, validTrackableToPlaceAnchor)
-                                .pose.position
-                        );
+            // if (inputRay.origin != Vector3.zero)
+            //     if (!DeleteAnchor(inputRay))
+            //         if (
+            //             validTrackableToPlaceAnchor
+            //             == UnityEngine.XR.ARSubsystems.TrackableType.None
+            //         )
+            //             PlaceAnchor(
+            //                 inputRay.GetPoint(maximumForwardOffset * forwardOffsetPercentage)
+            //             );
+            //         else
+            //             PlaceAnchor(
+            //                 trackablePoolManager
+            //                     .RaycastTillTrackable(inputRay, validTrackableToPlaceAnchor)
+            //                     .pose.position
+            //             );
         }
 
         //* ╔═════════════════════╗

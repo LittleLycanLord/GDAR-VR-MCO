@@ -85,27 +85,27 @@ namespace LilLycanLord_Official
         //* ╔═════════════════════╗
         //* ║ Non - Monobehaviour ║
         //* ╚═════════════════════╝
-        public void OnARTrackablesChange(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
-        {
-            foreach (ARTrackedImage addedImage in eventArgs.added)
-            {
-                AttachPrefab(addedImage.transform);
-            }
-            foreach (ARTrackedImage updatedImage in eventArgs.updated)
-            {
-                Debug.Log(updatedImage.name + " -> " + updatedImage.trackingState);
-                if (!detachPrefabsOnLimitedTracking)
-                    break;
-                if (
-                    updatedImage.trackingState == TrackingState.Limited
-                    || updatedImage.trackingState == TrackingState.None
-                )
-                    DetachPrefab(updatedImage.transform);
-                else if (updatedImage.transform.Find(attachedPrefab.name) == null)
-                    AttachPrefab(updatedImage.transform);
-            }
-            foreach (ARTrackedImage removedImage in eventArgs.removed) { }
-        }
+        // public void OnARTrackablesChange(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
+        // {
+        //     foreach (ARTrackedImage addedImage in eventArgs.added)
+        //     {
+        //         AttachPrefab(addedImage.transform);
+        //     }
+        //     foreach (ARTrackedImage updatedImage in eventArgs.updated)
+        //     {
+        //         Debug.Log(updatedImage.name + " -> " + updatedImage.trackingState);
+        //         if (!detachPrefabsOnLimitedTracking)
+        //             break;
+        //         if (
+        //             updatedImage.trackingState == TrackingState.Limited
+        //             || updatedImage.trackingState == TrackingState.None
+        //         )
+        //             DetachPrefab(updatedImage.transform);
+        //         else if (updatedImage.transform.Find(attachedPrefab.name) == null)
+        //             AttachPrefab(updatedImage.transform);
+        //     }
+        //     foreach (ARTrackedImage removedImage in eventArgs.removed) { }
+        // }
 
         void AttachPrefab(Transform parent)
         {
